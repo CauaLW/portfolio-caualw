@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'DM Sans', sans-serif;
+}
+
+html {
+    --white: #F9F9F9
+}
+
+body {
+    background-color: #171717;
+
+    padding: 0 5vw;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+
+    display: grid;
+    grid-template-areas: 'title header-itens';
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 15px;
+}
+
+.header.active {
+    background-color: #171717;
+}
+
+.title {
+    grid-area: title;
+
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+.mobile-menu {
+    grid-area: mobile-menu;
+
+    display: none;
+    color: white;
+
+    cursor: pointer;
+}
+
+#mobile-icon {
+    content: url(assets/hamburguer-icon.svg);
+}
+
+#mobile-icon.active {
+    content: url(assets/hamburguer-close.svg);
+}
+
+@keyframes mobile-menu-animation {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(10px);
+    }
+}
+
+.header-itens {
+    animation: mobile-menu-animation 500ms ease 0s 1 normal forwards;
+    grid-area: header-itens;
+
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+}
+
+.header-item {
+    padding: 0 15px;
+}
+
+.header-itens.active {
+    flex-direction: column;
+
+    margin-bottom: 10px;
+}
+
+.header-item.active {
+    padding: 10px 0;
+}
+
+.header-link {
+    color: var(--white);
+    text-decoration: none;
+    
+    font-size: 1rem;
+}
+
+.content {
+    margin-top: 50px;
+}
+
+.resume {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.presentation h1 {
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #828282;
+    margin-bottom: 15px;
+}
+
+.github {
+    padding: 8px;
+
+    text-decoration: none;
+    color: #171717;
+    background-color: #00DF5E;
+}
+
+.contact {
+    padding: 8px;
+
+    margin-left: 10px;
+
+    text-decoration: none;
+    color: #F9F9F9;
+    border: 1px solid #333333;
+}
+
+.illustration img {
+    width: 30vw;
+    height: 30vh;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+.about-me h1 {
+    margin-bottom: 10px;
+
+    color: var(--white);
+    font-size: 1.7rem;
+}
+
+.about-me p {
+    width: 70vw;
+
+    text-align: center;
+
+    font-size: 1.1rem;
+    color: #828282;
+}
+
+.contacts {
+    width: 70vw;
+    margin: 40px auto 0 auto;
+}
+
+.contacts-items {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-item a {
+    width: 200px;
+    margin: 10px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: var(--white);
+    text-decoration: none;
+}
+
+.contact-item img {
+    width: 60px;
+    padding: 5px;
+
+    background-color: #212121;
+
+    border-radius: 50px;
+}
+
+.contact-item h1 {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+    .header {
+        grid-template-areas: 
+        'title mobile-menu'
+        'header-itens header-itens';
+    }
+
+    .header-itens {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: inline;
+    }
+
+    .resume {
+        justify-content: center;
+    }
+
+    .illustration img {
+        margin-top: 30px;
+
+        width: 70vw;
+        height: 40vh;
+    }
+
+    .contacts-items {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 350px) {
+    .github, .contact {
+        font-size: 0.9rem;
+    }
+}

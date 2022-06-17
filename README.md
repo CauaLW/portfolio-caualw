@@ -34,7 +34,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - CSS
 - JavaScript
 
-### Você pode acessar online <a href="https://www.caualoewendev.online/" target="_blank">aqui</a>
+### Você pode acessar online <a href="https://portfolio-caualw.vercel.app/" target="_blank">aqui</a>
 
 ## :closed_book: Licença
 
